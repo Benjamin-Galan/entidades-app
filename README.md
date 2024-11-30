@@ -59,7 +59,7 @@ Este proyecto necesita 2 variables de entorno, el interprete de python y el arch
 
 Abre CMD y ejecuta el siguiente comando (reemplaza la ruta con la ubicación de tu archivo JSON):
 ```bash
-set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\begal\AppData\Roaming\gcloud\angelic-surfer-443117-d8-35160ff8546b.json
+set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\nombredeusuario\AppData\Roaming\gcloud\angelic-surfer-443117-d8-35160ff8546b.json
 ```
 ```bash
 set PYTHON_PATH=C:\Python312\python.exe
@@ -67,7 +67,7 @@ set PYTHON_PATH=C:\Python312\python.exe
 
 En powershell
 ```bash
-$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\begal\AppData\Roaming\gcloud\angelic-surfer-443117-d8-35160ff8546b.json"
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\nombredeusuario\AppData\Roaming\gcloud\angelic-surfer-443117-d8-35160ff8546b.json"
 ```
 ```bash
  $env:PYTHON_PATH="C:\Python312\python.exe"
@@ -79,4 +79,4 @@ Ejecuta el servidor de laravel con php artisan serve
 
 ### 6. Observaciones
 1. Si tienes problemas con la base de datos crea una migración con ####php artisan migrate
-
+2. Si tienes otro problema enviame un correo a begalan@outlook.es para ayudarte
