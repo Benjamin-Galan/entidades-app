@@ -18,3 +18,14 @@ Clona el repositorio a tu máquina local:
 
 ```bash
 git clone https://github.com/Benjamin-Galan/entidades-app.git
+
+```
+### 2. Descargar dependencias de node y composer
+
+```bash
+npm install
+```
+
+```bash
+composer install
+```
