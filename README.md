@@ -77,6 +77,8 @@ Se deben llamar de esta manera ya que tienen ese nombre en el archivo .env de la
 ### 5. Ejecutar el servidor de laravel
 Ejecuta el servidor de laravel con php artisan serve
 
+https://github.com/Benjamin-Galan/entidades-app/master/imagen/captura.jpeg
+
 ### 6. Observaciones
 1. Si tienes problemas con la base de datos crea una migración con php artisan migrate
 2. Si tienes otro problema enviame un correo a begalan@outlook.es para ayudarte
