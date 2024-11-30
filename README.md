@@ -37,18 +37,22 @@ pip install google-cloud-language
 ```
 
 ### 3. Crear una cuenta de google cloud
-Regístrate en Google Cloud Console.
-En Google Cloud Console, ve a Seleccionar un proyecto o haz clic en Crear un proyecto. Se debe configurar un metodo de pago, seleccionar el credito gratis inicial que ofrece google
-Asigna un nombre a tu proyecto y configura la organización, también se puede seleccionar un proyecto por defecto.
-Haz clic en Crear para crear tu proyecto.
-En la Google Cloud Console, ve a APIs y Servicios > Biblioteca.
-Busca Cloud Natural Language API.
-Haz clic en Habilitar para activar la API en tu proyecto.
-Ve a APIs y Servicios > Credenciales en la Google Cloud Console.
-Haz clic en Crear credenciales y selecciona Cuenta de servicio.
-Asigna un nombre a la cuenta de servicio y selecciona el rol Proyecto > Propietario o uno adecuado.
-En Tipo de clave, selecciona JSON y haz clic en Crear.
+1. Ve a google cloud console y crea una cuenta.
+2. Ve a Seleccionar un proyecto o haz clic en Crear un proyecto.
+3. Asigna un nombre a tu proyecto y configura la organización opcional.
+4. Haz clic en Crear para crear tu proyecto.
+5. Te saldrá una notificación para que selecciones el proyecto.
+6. En la Google Cloud Console, ve a APIs y Servicios > Biblioteca.
+7. Busca Cloud Natural Language API.
+8. Haz clic en Habilitar para activar la API en tu proyecto.
+9. Ve a APIs y Servicios > Credenciales en la Google Cloud Console.
+10. Haz clic en el menu de administración > IAM > Cuentas de servicio
+11. Asigna un nombre a la cuenta de servicio y selecciona el rol Proyecto > Propietario o uno adecuado.
+12. Luego, aparecerá el proyecto. A la derecha hay un ícono con 3 puntos.
+13. Dar click > Administrar claves > agregar clave > Crear clave nueva
+14. En Tipo de clave, selecciona JSON y haz clic en Crear.
 Descarga el archivo JSON con las credenciales de la cuenta de servicio y guárdalo en un lugar seguro.
+
 
 ### 4. Configurar variables de entorno
 Este proyecto necesita 2 variables de entorno, el interprete de python y el archivo json con la clave de api de google
