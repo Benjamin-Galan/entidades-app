@@ -1,66 +1,82 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Extracción de Entidades Predominantes desde una URL
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto permite extraer las entidades 5 predominantes de un texto proveniente de una URL utilizando la API de Google Cloud Language.
 
-## About Laravel
+## Requisitos
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Para ejecutar este proyecto, son necesarias las siguientes herramientas y servicios:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Google Cloud Platform**: Para acceder a la API de Google Cloud Language.
+- **Node.js y Composer**: Para las dependencias relacionadas con el backend del proyecto.
+- **Python**: Para ejecutar el código que interactúa con la API de Google Cloud Language.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Instrucciones para la Configuración
 
-## Learning Laravel
+### 1. Clonar el Repositorio
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Clona el repositorio a tu máquina local:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+git clone https://github.com/Benjamin-Galan/entidades-app.git
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+### 2. Descargar dependencias de node, composer y python
 
-## Laravel Sponsors
+```bash
+npm install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+composer install
+```
 
-### Premium Partners
+```bash
+pip install requests
+pip install beautifulsoup4
+pip install google-cloud-language
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 3. Crear una cuenta de google cloud
+1. Ve a google cloud console y crea una cuenta.
+2. Ve a Seleccionar un proyecto o haz clic en Crear un proyecto.
+3. Asigna un nombre a tu proyecto y configura la organización opcional.
+4. Haz clic en Crear para crear tu proyecto.
+5. Te saldrá una notificación para que selecciones el proyecto.
+6. En la Google Cloud Console, ve a APIs y Servicios > Biblioteca.
+7. Busca Cloud Natural Language API.
+8. Haz clic en Habilitar para activar la API en tu proyecto.
+9. Ve a APIs y Servicios > Credenciales en la Google Cloud Console.
+10. Haz clic en el menu de administración > IAM > Cuentas de servicio
+11. Asigna un nombre a la cuenta de servicio y selecciona el rol Proyecto > Propietario o uno adecuado.
+12. Luego, aparecerá el proyecto. A la derecha hay un ícono con 3 puntos.
+13. Dar click > Administrar claves > agregar clave > Crear clave nueva
+14. En Tipo de clave, selecciona JSON y haz clic en Crear.
+Descarga el archivo JSON con las credenciales de la cuenta de servicio y guárdalo en un lugar seguro.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Configurar variables de entorno
+Este proyecto necesita 2 variables de entorno, el interprete de python y el archivo json con la clave de api de google
 
-## Code of Conduct
+Abre CMD y ejecuta el siguiente comando (reemplaza la ruta con la ubicación de tu archivo JSON):
+```bash
+set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\nombredeusuario\AppData\Roaming\gcloud\angelic-surfer-443117-d8-35160ff8546b.json
+```
+```bash
+set PYTHON_PATH=C:\Python312\python.exe
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+En powershell
+```bash
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\nombredeusuario\AppData\Roaming\gcloud\angelic-surfer-443117-d8-35160ff8546b.json"
+```
+```bash
+ $env:PYTHON_PATH="C:\Python312\python.exe"
+```
+Se deben llamar de esta manera ya que tienen ese nombre en el archivo .env de laravel
 
-## Security Vulnerabilities
+### 5. Ejecutar el servidor de laravel
+Ejecuta el servidor de laravel con php artisan serve
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Observaciones
+1. Si tienes problemas con la base de datos crea una migración con php artisan migrate
+2. Si tienes otro problema enviame un correo a begalan@outlook.es para ayudarte
